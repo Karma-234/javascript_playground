@@ -1,0 +1,19 @@
+.error{
+    padding: 10px;
+    color: crimson;
+    border: 1px solid crimson;
+}
+
+.success{
+    padding: 10px;
+    color: limegreen;
+    border: 1px dotted green;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background: #2A286A;
+    padding: 20;
+    text-align: center;
+}
