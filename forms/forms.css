@@ -1,0 +1,28 @@
+.form-box {
+    text-align: center;
+    /* position: center; */
+    display: inline-block;
+    /* display: table-column; */
+    border: #ccc 2px dashed;
+    border-radius: 14;
+    padding: 20px;
+    max-width: 400;
+}
+.signup-form {
+    display: inline-block;
+    /* direction: rtl; */
+}
+body {
+    align-items: center;
+    align-content: space-around;
+    text-align: center;
+}
+#submit {
+    text-align: left;
+    display: inline-block;
+}
+input {
+    display: block;
+    padding: 6px;
+    margin: 10px auto;
+}
