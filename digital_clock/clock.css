@@ -1,0 +1,29 @@
+body{
+    background: #333;
+}
+.clock{
+    background-color: blueviolet;
+    text-align: center;
+    padding: 50;
+    margin-top: 50;
+    margin-bottom: 50;
+}
+.time{
+    background: white;
+   margin-top: 25;
+   margin-bottom: 25;
+   font-size: x-large;
+   font-weight: 500;
+}
+.hours{
+   font-size: x-large;
+   font-weight: 600;
+}
+.minutes{
+    
+    font-weight: 500;
+ }
+ .seconds{
+    
+    font-weight: 200;
+ }
