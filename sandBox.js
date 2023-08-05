@@ -31,10 +31,7 @@ const betsAllArtices = document.querySelectorAll('li');
 betsAllArtices.forEach(e=>{
     e.addEventListener('click', event =>{
     
-        // allArticles.remove(e.classList)
-        // allArticles.
-        // allArticles.indexOf(e);
-        // allArticles.remove(e.target);
+        
         event.target.remove();
         
         // console.log(event.target.remove);

@@ -8,12 +8,14 @@ body{
     margin-top: 50;
     margin-bottom: 50;
 }
-.time{
-    background: white;
-   margin-top: 25;
-   margin-bottom: 25;
-   font-size: x-large;
-   font-weight: 500;
+.time {
+    background: purple;
+    border-radius: 8px;
+    padding: 8;
+    margin-top: 25;
+    margin-bottom: 25;
+    font-size: x-large;
+    font-weight: 500;
 }
 .hours{
    font-size: x-large;
@@ -22,8 +24,8 @@ body{
 .minutes{
     
     font-weight: 500;
- }
- .seconds{
+}
+.seconds{
     
     font-weight: 200;
  }
