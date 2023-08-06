@@ -1,12 +1,18 @@
 .todolist {
     color: gray;
+    display: block;
 }
-.todo{
+li{
     color: purple;
+    display: block;
+   
+
     
 }
 .title {
-    color: whitesmoke;
+    color: black;
+    display: block;
+    margin-top: 18;
 }
 
 #id{
