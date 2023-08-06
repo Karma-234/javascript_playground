@@ -43,12 +43,10 @@ const restoreGenerator = todo =>{
 
 const tempGenerator = todo =>{
     const newTodo = document.createElement('li');
-    newTodo.setAttribute('class', 'todo');
-    // newTodo.setAttribute('class','todo');
+    newTodo.setAttribute('class', 'todo py-2 my-2 bg-primary');
     newTodo.innerText = todo;
     todoList.append(newTodo);
-    // searchITems.push(todo);
-    // console.log(searchITems)
+  
     
 };
 addForm.addtodo.addEventListener('keyup', e=>{
@@ -69,3 +67,38 @@ addForm.addEventListener('submit', e=>{
 });
 // todoList.append();
 // const todos = Array.from(todoList.children);
+const getTodosAsync = async()=>{
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/');
+    if (response.status !== 200) {
+        throw new Error('Unable to fetch data!')
+    }
+    const data = await response.json();
+    
+    return data;
+}
+getTodosAsync().then(e=>{
+    let counter = 0;
+    e.forEach(v=>{
+        
+            // tempGenerator(v['title']);
+           
+            
+            if (counter < 50) {
+                const timer = setInterval(() => {
+                    tempGenerator(v['title']);
+                    if (counter > 48) {
+                        clearInterval(timer);
+                    }else{
+                        counter++;
+                    }
+                }, 100);
+                
+                
+                
+            } 
+          
+            // counter++;
+    });
+}).catch(e=>{
+    alert(e);
+});
