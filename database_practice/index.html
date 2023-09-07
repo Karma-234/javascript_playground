@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1 class="header">Users</h1>
+  <div class="users">
+    <ul></ul>
+  </div>
+  <input type="text" name="add user" id="add">
+  <input type="submit" value="Submit">
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+        import { getFirestore, collection, doc, getDocs, onSnapshot, addDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+       
+
+        const userList = document.querySelector('ul');
+        const button = document.querySelector('[type="submit"]');
+        const textField = document.querySelector('[type="text"]');
+        const getUser = (user, id)=>{
+        const newItem = `<li class="user" data-id=${id}>${user.email}</li>`;
+        userList.innerHTML += newItem;
+        };
+        const addUser = email =>{
+          addDoc(users,{'email':email});
+        };
+        const deleteUser = id=>{
+          const tags = document.querySelectorAll('li');
+          tags.forEach(e=>{
+            if (e.getAttribute('data-id')===id) {
+              e.remove();
+            }
+          })
+        };
+
+        button.addEventListener('click',e=>{
+          e.preventDefault();
+          const email = textField.value;
+          // console.log(email);
+          if (email != '') {
+            addUser(email);
+          textField.value = '';
+          }
+        });
+        userList.addEventListener('click',e=>{
+          if (e.target.tagName==='LI') {
+            const id = e.target.getAttribute('data-id');
+            deleteDoc(doc(users,id));
+          }
+        });
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyDeFKLM7vrxRXG_jN62q_-fvhGx0RpCXS4",
+          authDomain: "javascript-playground-92ae2.firebaseapp.com",
+          projectId: "javascript-playground-92ae2",
+          storageBucket: "javascript-playground-92ae2.appspot.com",
+          messagingSenderId: "794213238473",
+          appId: "1:794213238473:web:5bb09ed6ba2f067417ef18",
+          measurementId: "G-C8PF6K5YM5"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        // console.log();
+        const users = collection(db,'users');
+        // const getUserDoc = ()=>{
+        //   return new Promise();
+        // };
+        const getUserSnapshot =()=> onSnapshot(users);
+        // console.log(getDocs(users));
+       const fetchUserFromDb =  onSnapshot(users,data=>{
+       
+        const changes = data.docChanges();
+        changes.forEach(change=>{
+          const doc = change.doc;
+          if (change.type === 'added') {
+            getUser(doc.data(),doc.id);
+          }else{
+            deleteUser(doc.id);
+            
+          }
+        });
+        });
+        // Unsubscribe from notifications
+
+        getUserSnapshot();
+        
+        
+      </script>
+      <script src="app.js"></script>  
+    <!-- <script src="/test.js"></script> -->
+</body>
+</html>

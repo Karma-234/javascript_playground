@@ -1,6 +1,19 @@
 const key = 'nyYjDa2TaV8AXnpNGpYfsA6E1kNdxCKq';
 
 
+const getCity = async (city) =>{
+    const base = 'http://dataservice.accuweather.com/locations/v1/cities/search'
+    const query = `?apikey=${key}&q=${city}`
+
+    const resp = await fetch(base + query,{'mode':'no-cors'});
+    const data = await  resp.json();
+    return data;
+
+}
+getCity('manchester').then(data=>{});
+
+
+
 // Sugar Syntax of Writing class.
 class User1 {
      name;
@@ -31,16 +44,6 @@ class Admin1 extends User1 {
     }
 }
 
-const getCity = async (city) =>{
-    const base = 'http://dataservice.accuweather.com/locations/v1/cities/search'
-    const query = `?apikey=${key}&q=${city}`
-
-    const resp = await fetch(base + query,{'mode':'no-cors'});
-    const data = await  resp.json();
-    return data;
-
-}
-getCity('manchester');
 
 // Prototype model of writing class
 function User(userName, number){
@@ -70,7 +73,7 @@ Admins.prototype.clearUsers = function(){console.log(`${this.title} has cleared 
 const firstUser = new User('alidev',44);
 const secondUser = new User1('kamzydev',63);
 const firstAdmin = new Admin1('adminKamzy',32,'Super Admin');
-const secondAdmin = new Admins('adminKamzy',32,'Super Admin');
+const secondAdmin = new Admins('superadminKamzy',32,'Super Admin');
 firstUser.login().logout();
 secondUser.login().logout();
 firstAdmin.login().logout().clearUsers();
