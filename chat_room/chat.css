@@ -1,7 +1,7 @@
 .header {
     text-align: center;
 }
-.choose-room{
+.room-options{
     align-items: center;
     text-align: center;
     
@@ -25,15 +25,12 @@
     box-shadow: 0px 1px 1px 1px rgba(42, 40, 106, 0.15),0px 1px 2px 0px rgba(42, 40, 106, 0.30) ;
 }
 .forms {
-    /* display: ; */
-    width: 100vw;
-    
     text-align: center;
     position: relative;
-    max-width: 100%;
-    margin-inline-start: 30px;
-    margin-inline-end: 30px;
-    margin-top: 30px;
+    margin-top: 70px;
+    margin-left: 20px;
+    margin-right: 20px;
+
     
 }
 button {
@@ -43,4 +40,62 @@ button {
     border-radius: 4px;
     
 }
-
+.selected {
+    color: black;
+    display: inline;
+    background-color: greenyellow;
+    padding: 8px;
+    border-radius: 8px;
+    margin-inline-end: 4px;
+    box-shadow: 0px 1px 1px 1px rgba(42, 40, 106, 0.15),0px 1px 2px 0px rgba(42, 40, 106, 0.30) ;
+}
+.hover {
+    color: black;
+    display: inline;
+    background-color: greenyellow;
+    padding: 8px;
+    border-radius: 8px;
+    margin-inline-end: 4px;
+    box-shadow: 0px 1px 1px 1px rgba(42, 40, 106, 0.15),0px 1px 2px 0px rgba(42, 40, 106, 0.30) ;
+}
+div.chat-card {
+    margin: 22px;
+    padding: 6px;
+    border: 2px solid grey;
+    border-radius: 12px;
+    
+}
+div p.name{
+    font-size: 12px;
+    font-weight: 600;
+    color: black;
+}
+span.time{
+    font-size: 12px;
+    font-weight: 400;
+    display: block;
+    text-align: end;
+}
+span.sender{
+    font-size: 12px;
+    font-weight: 400;
+}
+p.message{
+    font-size: 16px;
+    height: 19px;
+    font-weight: 300;
+}
+div.name-change{
+text-align: center;
+}
+div.name-change p{
+    font-size: 12px;
+    font-weight: 400;
+}
+span.new-name{
+    font-size: 19px;
+    font-weight: 500;
+}
+.hide {
+    display: none;
+}

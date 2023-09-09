@@ -11,23 +11,49 @@
         <h1>
             Go Chat Room
         </h1>
-    </div>
-    <div class="choose-room">
         <p class="title">Choose a chat room:</p>
-        <nav class="room-options">
-            <p class="room">#general</p>
-            <p class="room">#gaming</p>
-            <p class="room">#music</p>
-            <p class="room">#vile</p>
-        </nav>
+    </div>
+    <div class="room-options">
+        <p class="room" id="general">#general</p>
+        <p class="room" id="gaming">#gaming</p>
+        <p class="room" id="music">#music</p>
+        <p class="room" id="vile">#vile</p>
+    </div>
+    <div class="chat" id="general">
+        <div class="chat-card">
+            <p class="name"><span class="sender">Sender:</span>Mario</p>
+            <p class="message">Hi there :) General<span class="time">a minute ago</span></p>
+        </div>
+    </div>
+    <div class="chat" id="gaming">
+        <div class="chat-card">
+            <p class="name"><span class="sender">Sender:</span>Mario</p>
+            <p class="message">Hi there :) Gamer<span class="time">a minute ago</span></p>
+        </div>
+    </div>
+    <div class="chat" id="music">
+        <div class="chat-card">
+            <p class="name"><span class="sender">Sender:</span>Mario</p>
+            <p class="message">Hi there :) Musician<span class="time">a minute ago</span></p>
+        </div>
+    </div>
+    <div class="chat" id="vile">
+        <div class="chat-card">
+            <p class="name"><span class="sender">Sender:</span>Mario</p>
+            <p class="message">Hi there :) Foul mouth<span class="time">a minute ago</span></p>
+        </div>
     </div>
     <div class="forms">
         <div class="message">
-            <p class="message-input"><span class="label">Your message:</span><input type="text" name="message" id=""><button type="submit">send</button></p>
+            <p class="message-input"><span class="label">Your message:</span><input type="text" name="send"><button type="submit">send</button></p>
         </div>
         <div class="update">
             <p class="update-input"><span class="label">Update name:</span><input type="text" name="update" id=""><button type="submit">update</button></p>
         </div>
+    </div>
+
+    <div class="name-change">
+        <p>You changed your name to: <span class="new-name">Alfred!</span></p>
     </div>
     <script src="chat.js"></script>
 </body>
