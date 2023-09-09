@@ -15,22 +15,22 @@ const selectTab = id=>{
 }
 roomList.addEventListener('mouseout',e=>{
     
-    if (e.target.tagName==='P' && e.target.classList.contains('hover')) {
+    if (e.target.tagName==='P' && (e.target.classList.contains('hover')||e.target.classList.contains('selected'))) {
         e.target.classList.remove('hover');
     }
 });
 roomList.addEventListener('mousemove',e=>{
     
-    if (e.target.tagName==='P' && !e.target.classList.contains('hover')) {
+    if (e.target.tagName==='P' && !e.target.classList.contains('hover') && !e.target.classList.contains('selected')) {
         e.target.classList.add('hover');
     }
 });
 roomList.addEventListener('click',e=>{
-    
-    // console.log(id);
     if (e.target.tagName==='P' && !e.target.classList.contains('selected')) {
         const id = e.target.getAttribute('id');
+        e.target.classList.remove('hover');
         e.target.classList.add('selected');
+        
         selectTab(id);
         
     }
