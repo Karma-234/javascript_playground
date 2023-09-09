@@ -1,0 +1,46 @@
+.header {
+    text-align: center;
+}
+.choose-room{
+    align-items: center;
+    text-align: center;
+    
+}
+.room{
+    display: inline;
+    color: white;
+    background-color: greenyellow;
+    padding: 8px;
+    border-radius: 8px;
+    margin-inline-end: 4px;
+    box-shadow: 0px 1px 1px 1px rgba(42, 40, 106, 0.15),0px 1px 2px 0px rgba(42, 40, 106, 0.30) ;
+}
+.label{
+    background-color: grey;
+    padding: 3px;
+    opacity: 70%;
+    border-radius: 2px;
+    font-size: small;
+    margin-inline-end: 0px;
+    box-shadow: 0px 1px 1px 1px rgba(42, 40, 106, 0.15),0px 1px 2px 0px rgba(42, 40, 106, 0.30) ;
+}
+.forms {
+    /* display: ; */
+    width: 100vw;
+    
+    text-align: center;
+    position: relative;
+    max-width: 100%;
+    margin-inline-start: 30px;
+    margin-inline-end: 30px;
+    margin-top: 30px;
+    
+}
+button {
+    background-color: greenyellow;
+    border-color: greenyellow;
+    color: #fff;
+    border-radius: 4px;
+    
+}
+
